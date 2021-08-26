@@ -1,10 +1,12 @@
+// eslint-disable-next-line react/display-name
+jest.mock('./components/box', () => () => <div role="box"/>);
+
 import { React } from 'react';
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import App from './App';
 
 test('renders learn react link', () => {
-	render(<App/>);
-	const someText = screen.getByText('Hello');
+	const { getByRole } = render(<App/>);
 
-	expect(someText).toBeInTheDocument();
+	expect(getByRole('box')).toBeInTheDocument();
 });

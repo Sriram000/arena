@@ -13,6 +13,7 @@ const Box = () => {
 		<div
 			className="box"
 			style={ style }
+			role="box"
 			onClick={ () => context.actions.changePosition() }
 		/>
 	);

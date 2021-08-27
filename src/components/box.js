@@ -14,7 +14,7 @@ const Box = () => {
 			className="box"
 			style={ style }
 			role="box"
-			onClick={ () => context.actions.changePosition() }
+			onClick={ () => context.actions.moveTarget() }
 		/>
 	);
 };

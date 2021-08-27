@@ -2,7 +2,7 @@
 jest.mock('../core/context', () =>
 	({
 		state: { target: { x: 10, y: 10 }},
-		actions: { changePosition: jest.fn() },
+		actions: { moveTarget: jest.fn() },
 	}));
 import { render, fireEvent } from '@testing-library/react';
 
@@ -34,11 +34,11 @@ describe('Box', () => {
 		});
 	});
 
-	test('when clicked called the action, changePostion', () => {
+	test('when clicked called the action, moveTarget', () => {
 		const component = render(Box()).getByRole('box');
 
 		fireEvent.click(component);
 
-		expect(actions.changePosition).toHaveBeenCalled();
+		expect(actions.moveTarget).toHaveBeenCalled();
 	});
 });

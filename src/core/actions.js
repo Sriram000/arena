@@ -1,13 +1,13 @@
 import { getRandomX, getRandomY } from '../services/positionService';
 import config from './config';
 
-const changePosition = () => ({
+const moveTarget = () => ({
 	x: getRandomX(config),
 	y: getRandomY(config),
 });
 
 const actions = {
-	changePosition,
+	moveTarget,
 };
 
 export default actions;

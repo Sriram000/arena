@@ -9,6 +9,7 @@ import { render, fireEvent } from '@testing-library/react';
 import context from '../core/context';
 import * as PositionService from '../services/positionService';
 import Box from './box';
+import config from '../core/config';
 
 describe('Box', () => {
 	const { actions } = context;
@@ -31,6 +32,8 @@ describe('Box', () => {
 		expect(component).toHaveStyle({
 			top: `${ y }%`,
 			left: `${ x }%`,
+			height: `${ config.height }vw`,
+			width: `${ config.width }vw`,
 		});
 	});
 

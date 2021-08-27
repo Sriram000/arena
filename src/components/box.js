@@ -1,4 +1,5 @@
 import { React } from 'react';
+import config from '../core/config';
 import context from '../core/context';
 import { project } from '../services/positionService';
 
@@ -7,6 +8,8 @@ const Box = () => {
 	const style = {
 		top: `${ y }%`,
 		left: `${ x }%`,
+		height: `${ config.height }vw`,
+		width: `${ config.width }vw`,
 	};
 
 	return (

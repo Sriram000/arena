@@ -39,7 +39,6 @@ describe('positonService', () => {
 		};
 		const { x, y } = postion;
 		const expectedResult = {
-			// eslint-disable-next-line no-magic-numbers
 			x: x - (x / two),
 			y: y - (y / two),
 		};

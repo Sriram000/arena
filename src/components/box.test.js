@@ -1,4 +1,9 @@
 /* eslint-disable max-lines-per-function */
+jest.mock('../core/context', () =>
+	({
+		state: { target: { x: 10, y: 10 }},
+		actions: { changePosition: jest.fn() },
+	}));
 import { render, fireEvent } from '@testing-library/react';
 
 import context from '../core/context';
@@ -22,6 +27,7 @@ describe('Box', () => {
 		const component = getByRole('box');
 
 		expect(component).toBeInTheDocument();
+		expect(PositionService.project).toHaveBeenCalledWith(context.state);
 		expect(component).toHaveStyle({
 			top: `${ y }%`,
 			left: `${ x }%`,
@@ -29,9 +35,6 @@ describe('Box', () => {
 	});
 
 	test('when clicked called the action, changePostion', () => {
-		jest.spyOn(actions, 'changePosition').mockImplementation();
-		jest.spyOn(PositionService, 'project').mockReturnValue(projectedBox);
-
 		const component = render(Box()).getByRole('box');
 
 		fireEvent.click(component);

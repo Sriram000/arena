@@ -9,4 +9,5 @@ test('renders learn react link', () => {
 	const { getByRole } = render(<App/>);
 
 	expect(getByRole('box')).toBeInTheDocument();
+	expect(getByRole('app')).toHaveClass('App');
 });

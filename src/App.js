@@ -3,7 +3,7 @@ import './App.scss';
 import Box from './components/box';
 
 const App = () =>
-	<div className="App">
+	<div className="App" role="app">
 		{	Box() }
 	</div>;
 
